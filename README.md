@@ -18,4 +18,4 @@ The decryption function returns either `false`, if decryption fails (wrong tag),
 
 The function `cc2p` also provide access to the `cc2p.chacha20(key, nonce, counter, message)` primitive and the `cc2p.poly1305(key, message)` primitive.
 
-Test against [test vectors here](https://tomaslangkaas.github.io/chacha20-poly1305.js/).
+Test vectors and tests are found in `index.html`. Test against [test vectors here](https://tomaslangkaas.github.io/chacha20-poly1305.js/).
