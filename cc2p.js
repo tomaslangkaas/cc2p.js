@@ -8,7 +8,7 @@ var cc2p = (function() {
     return a;
   }
   
-  function compare(a, b) {//constant time
+  function compare(a, b) {//constant time comparison
         if (a.length !== b.length) return false;
         for (var i = 0, r = 0; i < a.length; i++) {
             r |= a[i] ^ b[i];
@@ -33,12 +33,12 @@ var cc2p = (function() {
       if (!tag) {
         chacha20(key, nonce, 1, msg);
       }
+      //run poly1305
       update(r, h, c, aad, 0, len1 + (16 - len1 % 16) % 16);
       update(r, h, c, msg, 0, len2 + (16 - len2 % 16) % 16);
       update(r, h, c, toLE(len1).concat(toLE(len2)), 0, 16);
       finish(k, h, c, out);
       if (tag) { //if decryption
-        //todo: constant-time comparison
         if (compare(out, tag)) {
           return chacha20(key, nonce, 1, msg);
         } else {
