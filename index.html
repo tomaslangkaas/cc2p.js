@@ -5,7 +5,7 @@
 
 </pre>
 <script>
-printResult(testNum, result){
+function printResult(testNum, result){
   var elm = document.getElementById('testresults');
   elm.innerHTML = elm.innerHTML + 'Test #'+ testNum + ': ' + (result? 'Passed' : 'Failed');
 }
