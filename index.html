@@ -9,7 +9,7 @@
 <script>
 function printResult(testNum, result){
   var elm = document.getElementById('testresults');
-  elm.innerHTML = elm.innerHTML + 'Test #'+ testNum + ': ' + (result? 'Passed' : 'Failed');
+  elm.innerHTML = elm.innerHTML + 'Test #'+ testNum + ': ' + (result? 'Passed' : 'Failed') + '<br>';
 }
 
 function test(index) {
@@ -21,8 +21,8 @@ function test(index) {
     ciphertext = parseHex(v[4].slice(0, -32)),
     tag = parseHex(v[4].slice(-32));
   var result = cc2p(key)(nonce, plaintext, aad);
-  //console.log('test ' + index, '' + result[0] === '' + ciphertext, '' + result[1] === '' + tag);
-  printResult(index, result[0] === '' + ciphertext && '' + result[1] === '' + tag);
+  console.log('test ' + index, '' + result[0] === '' + ciphertext, '' + result[1] === '' + tag);
+  printResult(index, '' + result[0] === '' + ciphertext && '' + result[1] === '' + tag);
 }
 
 setTimeout(function() {
