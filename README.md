@@ -17,3 +17,5 @@ The encryption function returns `[ciphertext, tag]`, where both `ciphertext` and
 The decryption function returns either `false`, if decryption fails (wrong tag), or the plaintext as an array of octets.
 
 The function `cc2p` also provide access to the `cc2p.chacha20(key, nonce, counter, message)` primitive and the `cc2p.poly1305(key, message)` primitive.
+
+Test against [test vectors here](https://tomaslangkaas.github.io/chacha20-poly1305.js/).
