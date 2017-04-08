@@ -1,4 +1,4 @@
-# chacha20-poly1305.js
+# cc2p.js
 minimal JavaScript implementation of chacha20-poly1305
 
 ```javascript
